@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Prøv selv s.64 (oppgave3)</title>
+</head>
+<body>
+
+    <script>
+
+        let dm = Number(prompt("Din datamengde"));
+        let sam = Number(prompt("Antall samtaler"));
+        let rt = Number(prompt("Ringetid"));
+        let sms = Number(prompt("Antall SMS"));
+        let mms = Number(prompt("Antall MMS"));
+
+        let pris = (dm*10)+(sam*0.89)+(rt*0.39)+(sms*0.69)+(mms*1.99);
+
+        document.write(`Din pris er. ${pris}kr`);
+
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Prøv selv s.60</title>
+</head>
+<body>
+
+    <script>
+
+        //kommentar
+        let hoyde = 32;
+        let bredde = 64;
+        let areal = hoyde*bredde;
+        let omkrets = 2*(hoyde+bredde);
+
+        let radius = prompt("Radius");
+        let omkrets1 = Math.round(Number(radius) * 2 * Math.PI);
+        let volum = Math.round(4 * Math.PI * Number(radius,3)/3);
+        let overflate = Math.round(4*Math.PI*Number(radius, 2));
+
+        let poeng = prompt("Antall poeng");
+        let mulige = prompt("Mulige poeng");
+        let karakter = Math.round(Number(poeng)/Number(mulige)*6);
+
+        let vekt = prompt("Din vekt (kg)");
+        let hoyde1 = prompt("Din høyde (meter)");
+        let hoyde2 = hoyde1 * hoyde1;
+        let kmi = (Number(vekt)/(Number(hoyde2)));
+
+
+        /* bla
+        blabla
+         */
+        document.write(`Arealet er ${areal}`);
+        document.write(`<br>`);
+        document.write(`Omkretsen er ${omkrets}`);
+        document.write(`<br>`);
+        document.write("Tall mellom 1 og 6:  ", Math.ceil(Math.random()*6));
+        document.write(`<br>`);
+        document.write("Tall mellom 0 og 10:  ", Math.floor(Math.random()*10));
+        document.write(`<br>`);
+        document.write("Tall mellom 10 og 20:  ", (Math.floor(Math.random()*10)+11));
+        document.write(`<br>`);
+        document.write(`Omkretsen er ${omkrets1}`);
+        document.write(`<br>`);
+        document.write(`Volumet er ${volum}`);
+        document.write(`<br>`);
+        document.write(`Overflaten er ${overflate}`);
+        document.write(`<br>`);
+        document.write(`Karakter: ${karakter}`);
+        document.write(`<br>`);
+        document.write(`Din KMI er: ${kmi}`);
+
+    </script>
+
+</body>
+</html>
