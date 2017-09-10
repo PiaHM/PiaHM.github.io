@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Lekse</title>
+
+    <style>
+        body {
+            margin: 0;
+
+        }
+
+
+    </style>
+
+</head>
+<body>
+
+
+<canvas id="minCanvas" width="600" height="400">
+</canvas>
+
+
+<script>
+
+    var minCanvas = document.getElementById("minCanvas");
+    var ctx = minCanvas.getContext("2d");
+
+    var bredde = innerWidth;
+    var hoyde = innerHeight;
+
+
+
+
+    function ting() {
+
+
+        minCanvas.width = bredde;
+        minCanvas.height = hoyde;
+
+        var x = Math.random() * bredde;
+        var y = Math.random() * hoyde;
+        var r = Math.random() * 100;
+        var farge = `hsl(${Math.random() * 360}, 100%, 50%)`;
+
+
+        ctx.arc(x, y, r, 0, 2 * Math.PI);
+        ctx.fillStyle = farge;
+        ctx.fill();
+
+    }
+
+
+
+
+    setInterval(ting, 10);
+
+
+</script>
+
+
+    </body>
+</html>
