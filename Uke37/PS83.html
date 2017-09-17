@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+    <meta charset="UTF-8">
+    <title>Prøv selv s.83</title>
+</head>
+<body>
+
+
+    <script>
+
+        var bilde = Math.ceil(Math.random()* 3);
+
+        if(bilde === 1) {
+            document.write(`<img src="Bilder/fugl1.jpg">`);
+        }
+
+        else if(bilde === 2) {
+            document.write(`<img src="Bilder/fugl3.jpg">`);
+        }
+
+        else {
+            document.write(`<img src="Bilder/fugl2.jpg">`);
+        }
+
+        var terning = Math.ceil(Math.random()* 6);
+
+
+        if(terning === 1) {
+            document.write(`Du fikk terningkast 1  <img src="Bilder/Terning1.jpg">`);
+        }
+
+        if(terning === 2) {
+            document.write(`Du fikk terningkast 2  <img src="Bilder/Terning2.jpg">`);
+        }
+
+        if(terning === 3) {
+            document.write(`Du fikk terningkast 3  <img src="Bilder/Terning3.jpg">`);
+        }
+
+        if(terning === 4) {
+            document.write(`Du fikk terningkast 4  <img src="Bilder/Terning4.jpg">`);
+        }
+
+        if(terning === 5) {
+            document.write(`Du fikk terningkast 5  <img src="Bilder/Terning5.jpg">`);
+        }
+
+        if(terning === 6) {
+            document.write(`Du fikk terningkast 6  <img src="Bilder/Terning6.jpg">`);
+        }
+
+        var tall1 = prompt("Tall");
+        var art = prompt("Regneart (+, -, *, /)");
+        var tall2 = prompt("Tall");
+
+        if(art === "+") {
+            sum = Number(tall1)+Number(tall2);
+            document.write(sum);
+        }
+
+       else if(art === "-") {
+            sum = Number(tall1)-Number(tall2);
+            document.write(sum);
+        }
+
+        else if(art === "*") {
+            sum = Number(tall1)*Number(tall2);
+            document.write(sum);
+        }
+
+        else if(art === "/") {
+            sum = Number(tall1)/Number(tall2);
+            document.write(sum);
+        }
+
+
+
+
+
+    </script>
+
+</body>
+</html>
