@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+    <meta charset="UTF-8">
+    <title>Prøv selv s.79</title>
+</head>
+<body>
+
+
+
+
+
+    <script>
+
+        var svar = prompt("1 eller 2?");
+
+        if (svar === "1" || svar === "2") {
+            document.write(`Du svarte riktig! <img src="Bilder/pokal.jpg"> `)
+        }
+        else {
+            document.write(`Du svarte feil! <img src="Bilder/narr.png">`)
+        }
+
+      var dag = prompt("Ukedag");
+        var dato = prompt("Dato");
+
+        if (dag === "fredag" && dato === "13") {
+            document.write(`Pass på, i dag er det fredag den 13! <img src="Bilder/13.jpg"> `)
+        }
+        else if (dag === "fredag") {
+            document.write("Endelig helg!")
+        }
+        else {
+            document.write(`Ha en god dag! <img src="Bilder/det-er-en-god-dag-plakat-311.jpg">`)
+        }
+
+
+
+    </script>
+
+</body>
+</html>
