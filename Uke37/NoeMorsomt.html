@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>En prikk</title>
+
+    <style>
+
+        body {
+            margin: 0;
+        }
+
+        #canvas{
+            background-color: black;
+          }
+
+    </style>
+
+</head>
+<body>
+
+    <canvas id="canvas" width="100" height="100"></canvas>
+
+    <script>
+
+        var canvas = document.getElementById("canvas");
+        var ctx = canvas.getContext("2d");
+        canvas.width = innerWidth;
+        canvas.height = innerHeight;
+
+        var x = 500;
+        var y = 40;
+        var r = 6;
+
+        ctx.fillStyle = `hsla(${Math.random()*360}, 100%, 50%, 1)`;
+
+        function tegnPrikk() {
+            
+
+            ctx.beginPath();
+            ctx.arc(x, y, r, 0, Math.PI * 2);
+            ctx.fill();
+            ctx.closePath();
+
+            x++; //Øker x med 1
+
+
+            if(x > innerWidth) {
+                x = 0;
+                y += 40;
+                r++;
+                ctx.fillStyle = `hsla(${Math.random()*360}, 100%, 50%, 1)`;
+            }
+
+            if(y>innerHeight){
+                y = 30;
+
+            }
+        }
+
+
+        setInterval(tegnPrikk, 1)
+
+
+
+    </script>
+
+
+</body>
+</html>
