@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+    <meta charset="UTF-8">
+    <title>Prøv selv s.87</title>
+</head>
+<body>
+
+<script>
+
+    //Oppgave 1 og 2
+
+    let mobil = prompt("Hvilket mobilmerke vil du vite mer om?");
+
+    switch (mobil.toLowerCase()) {
+        case"samsung":
+            document.body.style.backgroundColor = "pink";
+            document.write(`Samsung (juridisk navn Samsung Group) er en av de største forretningsgruppene i Sør-Korea. Det startet som et
+            eksportselskap i 1938, men utvidet seg raskt til andre områder. Samsung Group har godt over 400 000 ansatte over hele verden,
+            og produserer biler, elektronikk, kjemikalier, fly, båter, handelsvarer, driver hoteller, fornøyelsesparker, bygger skyskrapere,
+            produserer tekstiler, mat osv i separate selskaper, bygd opp etter den asiatiske finanskrisen. Suwon i Sør-Korea blir av og til kalt
+            «Samsungbyen» i dagligtale.
+
+Samsung Electronics, grunnlagt i 1969, er det største medlemmet av Samsunggruppen, og en av de største elektronikkfirmaene i verden. Det ble
+grunnlagt i Daegu i Sør-Korea, og finnes i dag i over 58 land, og har over 208 000 ansatte. Omsetningen i 2003 var på over 101,7 milliarder
+amerikanske dollar. Samsung Electronics er i dag ansett som et av verdens top 10 selskaper, og er et av bare 4 selskaper i Asia (inkludert Japan)
+som omsetter for over 100 milliarder amerikanske dollar. I 2010 solgte Samsung 280 millioner mobiltelefoner, og i 2011 ble
+salgstallet øket til over 300 millioner telefoner.[1]`);
+    break;
+        case "microsoft":
+            document.body.style.backgroundColor = "blue";
+            document.write(`Microsoft Corporation (NASDAQ: MSFT) er et amerikansk programvareselskap, og har ca 118 000 ansatte. Selskapet ble
+            stiftet i 1975 i Albuquerque, New Mexico av Bill Gates og Paul Allen, og er mest kjent for operativsystemene Microsoft Windows/MS-DOS
+            og kontorpakken Microsoft Office.
+
+Selskapets administrerende direktør (CEO og president) er Satya Nadella, mens grunnleggeren Gates nå er styreleder for selskapet.
+
+Microsoft har blitt mer mangfoldig i nyere år ved å gå inn i markedet med videospill med Xbox og dets etterfølger Xbox 360 og etterfølgeren Xbox One,
+ foruten også inn i forbrukerelektronikk og digitale tjenester med Zune, MSN og Windows Phone OS. Den jevne økningen av aksjer i selskapets
+ innledende børsnotering (IPO) i 1986 har gjort anslagsvis 3 millardærer og 12 000 millionærer av Microsofts ansatte.[1] I mai 2011 anskaffet
+ Microsoft Skype Communications for 8,5 milliarder dollar.[2]`);
+            break;
+        case "sony":
+            document.body.style.backgroundColor = "yellow";
+            document.write(`Sony Corporation er et internasjonalt elektronikkonsern med hovedkontor i Tokyo i Japan. Sony er for tiden verdens
+            største produsent av forbrukerelektronikk og en av de største bedriftene i Japan og i verden.
+
+Selskapet ble grunnlagt 7. mai 1946 av Masaru Ibuka og Akio Morita under navnet Tokyo Telecommunications Engineering, med rundt 20 ansatte.
+Selskapets første produkter, ved slutten av 1940-tallet, var en riskoker og et elektrisk varmeteppe.
+
+Selskapet ble etter hvert mere konsentrert om lyd- og bildebehandling og leverer fortsatt diverse radio-, stereo- og TV-produkter til vanlige
+forbrukere. Selskapet var tidlig ute med små bærbare enheter som Walkman for kompaktkasetter.`);
+            break;
+        case "apple":
+            document.body.style.backgroundColor = "green";
+            document.write(`Apple Inc. (NASDAQ: AAPL (tidligere Apple Computer, Inc.) er et amerikansk multinasjonalt teknologiselskap som
+            utvikler og selger forbrukerelektronikk, programvare, og personlige datamaskiner. Selskapets mest kjente produkter er Macintosh-familien
+             med datamaskiner, iPod, iPhone, iPad og Apple Watch. Programvaren består blant annet av operativsystemet Mac OS X, multimedieavspilleren
+              iTunes, programvarepakkene iLife og iWork, bildebehandlingsprogrammet Aperture, Final Cut Studio, som er en serie programmer for den
+               profesjonelle musikk- og filmindustrien, Logic Studio, for musikkproduksjon, nettleseren Safari og iOS, som er et operativsystem for
+               mobile enheter.`);
+            break;
+        default:
+            document.write("Beklager, vi har ingen informasjon om dette mobilmerke")
+    }
+
+    //Oppgave 3
+
+    let rovdyr = prompt("Hvilket rovdyr lurer du på?");
+
+    switch (rovdyr.toLowerCase()) {
+        case "ulv":
+            document.write("<br><br> I Norge er det 33 ulver");
+        break;
+        case "jerv":
+            document.write(" <br><br> I Norge er det 343 jerver");
+        break;
+        case "bjørn":
+            document.write("<br><br> I Norge er det 137 bjørner");
+        break;
+        case "gaupe":
+            document.write("<br><br> I Norge er det 350 gauper");
+    }
+
+    //Oppgave 4
+
+    let type = prompt("Hva slags billett skal du ha? (barn, pensjonist, ungdom eller voksen)");
+
+    switch (type.toLowerCase()) {
+        case "barn":
+        case "pensjonist":
+            document.write("<br><br>Din billett koster 20kr");
+        break;
+        case "ungdom":
+            document.write("<br><br>Din billett koster 25kr");
+        break;
+        case "voksen":
+            document.write("<br><br>Din billett koster 30kr");
+    }
+
+</script>
+
+</body>
+</html>

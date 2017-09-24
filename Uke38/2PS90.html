@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Prøv selv s.90, oppgave 2</title>
+</head>
+<body>
+
+<canvas id="minCanvas" width="500px" height="500px"></canvas>
+
+<script>
+
+    let minCanvas = document.getElementById("minCanvas");
+    let ctx = minCanvas.getContext("2d");
+
+    let y = 0;
+
+
+
+
+    while (y < 500) {
+        ctx.beginPath();
+
+        ctx.moveTo(0, y);
+        ctx.strokeStyle = `hsla(${Math.random()*360}, 100%, 50%, 0.4)`;
+        ctx.lineTo(500, y);
+        ctx.stroke();
+
+
+        y++;
+
+        ctx.closePath();
+
+
+    }
+
+    </script>
+
+</body>
+</html>
