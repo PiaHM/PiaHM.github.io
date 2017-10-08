@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Lekse</title>
+    <style>
+        body{
+            margin: 0;
+        }
+        #canvas{
+            background-color: white;
+        }
+    </style>
+</head>
+<body>
+
+<canvas width="200" height="200" id="canvas"></canvas>
+
+<script>
+
+    var ac = new AudioContext();
+
+    for(var x = 0; x < 1000; x++) {
+
+        var osc = ac.createOscillator(); //Lager oscillator
+
+        osc.connect(ac.destination); //Kobler til høytaler
+        osc.frequency.value = 10000 + x ; //Hvilken tone
+
+        osc.start(x / 100); //starter lyd
+        osc.stop(x / 100 + 0.01); //stopper lyd
+
+    }
+
+    let canvas = document.getElementById("canvas");
+    let ctx = canvas.getContext("2d");
+    canvas.width = innerWidth;
+    canvas.height = innerHeight;
+
+    function tegnSirkler() {
+        for(let x = 1; x < 1000; x+=8) {
+
+            ctx.beginPath();
+            ctx.strokeStyle = `hsl(${Math.random()* x}, 100%, 50%)`;
+            ctx.rect(0, 0, x, x);
+            ctx.rect(100, 100, x, x);
+            ctx.rect(200, 200, x, x);
+            ctx.rect(300, 300, x, x);
+            ctx.stroke();
+
+            ctx.closePath();
+        }
+    }
+
+
+
+    setInterval(tegnSirkler, 10)
+
+</script>
+
+
+
+    </body>
+</html>
