@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+    <meta charset="UTF-8">
+    <title>Prøv selv, s. 105</title>
+</head>
+<body>
+
+    <p id="tekst">Blablabla</p>
+
+    <script>
+
+        //oppgave 1
+        function lekse(side) {
+            document.write("Lekse på side: " + side + "<br>")
+        }
+
+        lekse(72);
+        lekse(84);
+        lekse(93);
+        lekse(55);
+        lekse(27);
+
+        //oppgave 2
+        function nyKontakt(fornavn, etternavn, telefon) {
+            document.write(fornavn + " " + etternavn + ", telefon: " + telefon + "<br>")
+        }
+
+        nyKontakt("Per", "Pettersen", 67045639);
+        nyKontakt("Ole", "Hermansen", 27304958);
+
+        //oppgave 3
+
+        function finnAreal(w, h) {
+            document.write("Arealet er " + w*h + "<br>")
+        }
+
+        finnAreal(3, 6);
+        finnAreal(2, 18);
+
+        function endre(bakgrunnsfarge, fontfarge) {
+            document.body.style.backgroundColor = bakgrunnsfarge;
+            document.body.style.color = fontfarge;
+        }
+
+        endre("Pink", "Green");
+    </script>
+
+</body>
+</html>

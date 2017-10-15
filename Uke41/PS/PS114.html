@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Prøv selv, s. 114</title>
+</head>
+<body>
+
+<button id="knapp">Klikk på knappen</button>
+<h1 id="ovr">Trykk på overskriften</h1>
+<img id="bilde" src="bronfenbrenner.png">
+
+    <script>
+//oppgave 1: anonym funksjon er en fuksjon uten funksjonsnavn
+
+//oppagve 2
+(function () {
+           let fornavn = "Per";
+           let etternavn = "Pettersen";
+
+    function visNavn() {
+        document.write(fornavn + " " + etternavn);
+    }
+    visNavn();
+       } )();
+
+        //oppgave 3
+let knapp = document.getElementById("knapp");
+
+
+knapp.onclick = function () {
+    document.write("Du klikket på knappen");
+};
+
+//oppgave 4
+let bilde = document.getElementById("bilde");
+let ovr = document.getElementById("ovr");
+
+        bilde.onclick = function () {
+            document.write("Du klikket på bildet");
+        };
+
+        bilde.onmousemove = function () {
+          document.body.style.backgroundColor = "orange";
+        };
+
+        ovr.onclick = function () {
+            document.write("Du klikket på overskriften");
+        };
+ovr.onmousemove = function () {
+    document.body.style.backgroundColor = "blue";
+};
+
+knapp.onmousemove = function () {
+    document.body.style.backgroundColor = "pink";
+};
+
+
+
+    </script>
+
+</body>
+</html>

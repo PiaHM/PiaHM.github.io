@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Prøv selv s.109, oppagve 4</title>
+</head>
+<body>
+<canvas width="200" height="200" id="canvas"></canvas>
+
+<script>
+
+    let canvas = document.getElementById("canvas");
+    let ctx = canvas.getContext("2d");
+    canvas.width = innerWidth;
+    canvas.height = innerHeight;
+
+    let totalBredde = 100;
+    let totalHoyde = 100;
+
+    function tegnFirkant(x, y, bredde, hoyde) {
+        ctx.beginPath();
+        ctx.strokeStyle = "blue";
+        ctx.rect(x, y, totalBredde += bredde, totalHoyde += hoyde);
+        ctx.stroke();
+
+
+    }
+
+    tegnFirkant(50, 50, 50, 50);
+    tegnFirkant(50, 50, 50, 50);
+   tegnFirkant(50, 50, 50, 50);
+   tegnFirkant(50, 50, 50, 50);
+   tegnFirkant(50, 50, 50, 50);
+   tegnFirkant(50, 50, 50, 50);
+   tegnFirkant(50, 50, 50, 50);
+   tegnFirkant(50, 50, 50, 50);
+
+
+
+</script>
+</body>
+</html>

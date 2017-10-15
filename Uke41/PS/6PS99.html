@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Prøv selv, s.99, oppgave 6</title>
+    <style>
+        body{
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+
+<canvas width="200" height="200" id="canvas"></canvas>
+
+    <script>
+
+        let canvas = document.getElementById("canvas");
+        let ctx = canvas.getContext("2d");
+        canvas.width = innerWidth;
+        canvas.height = innerHeight;
+
+        let x = 100;
+        let y = 100;
+        function tegnSirkel() {
+            ctx.beginPath();
+            ctx.strokeStyle = "pink";
+            ctx.arc(x, y, 100, 0, Math.PI*2);
+            ctx.stroke();
+        }
+
+        function flyttX() {
+            x+=20;
+        }
+
+            function flyttY() {
+                y+=20;
+        }
+
+
+        tegnSirkel();
+        flyttX();
+        flyttY();
+        tegnSirkel();
+        flyttX();
+        flyttY();
+        tegnSirkel();
+
+        //B oppgaven, fikse
+        function flereSirkler() {
+            while (x < innerWidth && y < innerHeight) {
+                tegnSirkel();
+                flyttX();
+                flyttY();
+
+            }
+
+        }
+
+        flereSirkler();
+
+    </script>
+
+</body>
+</html>

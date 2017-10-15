@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Prøv selv, s. 109</title>
+</head>
+<body>
+
+
+    <script>
+        //Oppgave 1: lokale er i funksjonen, globale er utenfor
+
+        //Oppgave3
+
+        function visBetaling(pris) {
+            let rabatt = 0.20;
+            let tilbudspris = pris - (rabatt*pris);
+
+            document.write("Ordinær pris = " + pris + "<br> Rabatt = " + rabatt*pris + "<br> Tilbudspris = " + tilbudspris + "<br><br>")
+        }
+
+        visBetaling(500);
+        visBetaling(700);
+        visBetaling(1200);
+
+
+
+    </script>
+
+</body>
+</html>

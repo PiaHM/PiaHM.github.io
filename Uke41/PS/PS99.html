@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Prøv selv, s. 99</title>
+</head>
+<body>
+
+<p id="tekst">Tekst blablabla</p>
+
+
+    <script>
+
+        let tekst = document.getElementById("tekst");
+
+        function navn() {
+            document.write("Navn <br>")
+        }
+
+        navn();
+        navn();
+        navn();
+
+        function endreTekst() {
+            tekst.style.backgroundColor = `hsl(${Math.random()* 360}, 100%, 50%)`; //oppgave 5. Teksten sin style sin bakgrunnsfarge er tilfeldig
+           tekst.style.fontSize = "150%"; //oppgave 5. Teksten sin style sin fontstørrelse er 150%
+        }
+
+        //endreTekst();
+        document.onclick = endreTekst;
+
+        //oppagve 4. Er hensiktsmessig å bruke funksjoner når vi skal gjenta noe flere ganger og skal styre rekkefølgen på hendelser
+
+
+
+
+    </script>
+
+</body>
+</html>
