@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+    <meta charset="UTF-8">
+    <title>Lekse til 13. november</title>
+</head>
+<body>
+
+    <input id="inp" type="text" placeholder="Ny film" required autocomplete="off">
+    <button id="btnF">Fjern siste film</button>
+    <button id="btnS">Sorter filmer</button>
+
+    <ul id="liste"> Filmer:
+    </ul>
+
+
+    <script>
+        let inp = document.getElementById("inp");
+        let btnS = document.getElementById("btnS");
+        let liste = document.getElementById("liste");
+        let btnF = document.getElementById("btnF");
+
+        let filmer = [];
+
+
+
+    inp.onchange = function () {
+        filmer.unshift(" " + inp.value);
+        liste.innerHTML += "<li>" + filmer[0] + "</li>";
+        inp.value = "";
+        console.log(filmer);
+    };
+
+    btnS.onclick = function () {
+        filmer.sort();
+        console.log(filmer);
+        liste.innerHTML = "Filmer:";
+
+        for (let film of filmer) {
+            liste.innerHTML += "<li>" +  film + "</li>";
+        }
+
+    };
+
+
+
+    btnF.onclick = function () {
+        filmer.pop();
+        console.log(filmer);
+       liste.removeChild(liste.lastChild);
+
+        }
+
+    </script>
+
+</body>
+</html>
