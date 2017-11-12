@@ -25,7 +25,7 @@
 
 
     inp.onchange = function () {
-        filmer.unshift(" " + inp.value);
+        filmer.unshift(inp.value);
         liste.innerHTML += "<li>" + filmer[0] + "</li>";
         inp.value = "";
         console.log(filmer);
