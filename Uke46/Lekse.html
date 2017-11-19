@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Lekse</title>
+    <style>
+        body{
+            width: 600px;
+            padding: 10px;
+            margin: auto;
+        }
+        th, td {
+            padding: 5px;
+
+        }
+    </style>
+</head>
+<body>
+
+<form id="skjema">
+
+    <input id="fornavn" type="text"  placeholder="Fornavn">
+    <input id="etternavn" type="text"  placeholder="Etternavn">
+    <input id="telefon" type="text" placeholder="Telefon">
+    <input id="epost" type="email"  placeholder="Epost">
+
+</form>
+
+<button id="send">Legg til</button>
+
+<table id="her">
+    <tr>
+        <th>Fornavn</th>
+        <th>Etternavn</th>
+        <th>Telefon</th>
+        <th>Epost</th>
+    </tr>
+
+</table>
+
+<script>
+
+    let skjema = document.getElementById("skjema");
+    let fornavn = document.getElementById("fornavn");
+    let etternavn = document.getElementById("etternavn");
+    let telefon = document.getElementById("telefon");
+    let epost = document.getElementById("epost");
+    let her = document.getElementById("her");
+
+
+
+    let kontakter = [
+        {fNavn: "Lise", eNavn: "Pettersen", tlf: 94836725, post: "ja@nei.no"},
+        {fNavn: "Mette", eNavn: "Hansen", tlf: 94823215, post: "jaja@nei.no"},
+        {fNavn: "Per", eNavn: "Olsen", tlf: 94839485, post: "nei@nei.no"}
+    ];
+
+    send.onclick = function leggTil(evt) {
+        evt.preventDefault();
+        let nyKontakt = {
+            fNavn: fornavn.value,
+            eNavn: etternavn.value,
+            tlf: telefon.value,
+            post: epost.value
+        };
+        kontakter.push(nyKontakt);
+        her.innerHTML = ` <tr>
+            <th>Fornavn</th>
+            <th>Etternavn</th>
+            <th>Telefon</th>
+            <th>Epost</th>
+        </tr>`;
+        visKontakter();
+
+        fornavn.value = "";
+        etternavn.value = "";
+        telefon.value = "";
+        epost.value = "";
+
+    };
+
+    function visKontakter() {
+        for(let [indeks, kontakt] of kontakter.entries()){
+            her.innerHTML += `<tr><td>${kontakt.fNavn}</td><td>${kontakt.eNavn}</td><td>${kontakt.tlf}</td><td>${kontakt.post}</td> </tr> <button onclick="fjern(${indeks})">Fjern</button><button onclick="rediger(${indeks})">Rediger</button> `
+        }
+    }
+
+    function fjern(i) {
+        kontakter.splice(i, 1);
+        her.innerHTML = ` <tr>
+            <th>Fornavn</th>
+            <th>Etternavn</th>
+            <th>Telefon</th>
+            <th>Epost</th>
+        </tr>`;
+        visKontakter();
+    }
+
+
+    function rediger(i) {
+
+        let kontakt = kontakter[i];
+
+                fornavn.value = kontakt.fNavn;
+                etternavn.value = kontakt.eNavn;
+                telefon.value = kontakt.tlf;
+                epost.value = kontakt.post;
+
+
+        fjern(i);
+
+    }
+
+    visKontakter();
+
+
+
+</script>
+
+</body>
+</html>
