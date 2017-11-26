@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Lekse uke 47</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.4.3/css/foundation-float.css">
+    <style>
+        #bilde1 {
+            width: 500px;
+        }
+
+
+        body {
+            margin: auto;
+            width: 600px;
+            padding: 15px;
+
+        }
+
+
+
+
+
+    </style>
+</head>
+<body>
+<form id="skjema">
+    <input id="inpID" type="text" placeholder="Movie ID" autocomplete="off">
+    <input id="inpTittel" type="text" placeholder="Tittel" autocomplete="off">
+    <input id="inpBilde" type="text" placeholder="Link til bilde" autocomplete="off">
+    <button class="button" type="submit">Registrer film</button>
+</form>
+
+<div id="tblFilmer"></div>
+
+<script>
+    var skjema = document.getElementById("skjema");
+    var inpID = document.getElementById("inpID");
+    var inpTittel = document.getElementById("inpTittel");
+    var tblFilmer = document.getElementById("tblFilmer");
+    var inpBilde = document.getElementById("inpBilde");
+
+
+
+    let filmer = new Map();
+    filmer.set("tt0052618", {tittel: "Ben Hur", bilde: "http://www.indiewire.com/wp-content/uploads/2016/08/benhur2016movie-wide.jpg"});
+    filmer.set("tt0054331", {tittel: "Spartacus", bilde: "https://assets.starz.com/imgix/Originals/Spartacus/Season4/Carousel/Vengeance/spartacus_vengeance_gallery_2012_13_2560x1440a.jpg?w=1024&auto=format%2Ccompress"});
+    filmer.set("tt0013442", {tittel: "Nosferatu", bilde: "http://www.screengeek.net/wp-content/uploads/2016/11/NOSFERATU.jpg"});
+    filmer.set("tt0069293", {tittel: "Solaris", bilde: "https://fanart.tv/fanart/movies/2103/moviethumb/solaris-542888d8f07d9.jpg"});
+
+
+    function rediger(id) {
+        var film = filmer.get(id);
+        inpID.value = id;
+        inpTittel.value = film.tittel;
+        inpBilde.value = film.bilde;
+    }
+
+    function slett(id) {
+        filmer.delete(id);
+        visFilmer();
+    }
+
+    function visFilmer() {
+        tblFilmer.innerHTML = "";
+        for( var [key, film] of filmer ) {
+            tblFilmer.innerHTML += `
+
+                        <h1>${film.tittel}</h1>
+                        <p><img id="bilde1" src="${film.bilde}"></p>
+                        <p>
+                            <button class="button" onclick="rediger('${key}')">Endre</button>
+                            <button class="button" onclick="slett('${key}')">Fjern</button>
+
+                        </p>
+
+                `;
+        }
+    }
+    function registrerFilm(evt) {
+        evt.preventDefault();
+        let ja = document.getElementById("inpBilde");
+        var film = {
+            tittel: inpTittel.value,
+            bilde: inpBilde.value
+        };
+        filmer.set(inpID.value, film);
+        visFilmer();
+        inpID.value = "";
+        inpTittel.value = "";
+        inpBilde.value = "";
+    }
+
+
+    skjema.onsubmit = registrerFilm;
+
+    visFilmer();
+</script>
+</body>
+</html>
