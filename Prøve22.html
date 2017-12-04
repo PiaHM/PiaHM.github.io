@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Prøve 02/12/2017, oppgave 2</title>
+    <style>
+        body {
+            margin: auto;
+            width: 600px;
+            background-color: lavender;
+        }
+
+
+    </style>
+</head>
+<body>
+
+<p>Velg fag</p>
+<select id="fag">                                   <!--Nedtrekksliste med fagene-->
+    <option>Velg fag</option>
+        <option>IT</option>
+        <option>Matte (S)</option>
+        <option>Matte (P)</option>
+        <option>Historie m/ Lise</option>
+        <option>Historie m/ Per</option>
+        <option>Norsk</option>
+        <option>Biologi</option>
+        <option>Religion m/ Peter</option>
+        <option>Religion m/ Bernt</option>
+        <option>Psykologi</option>
+        <option>Gym m/ Ole</option>
+        <option>Gym m/ Kristian</option>
+
+</select>
+
+
+<h1>Timeplan</h1>
+
+<p>Mandag</p>
+<p id="mandag"></p>
+<hr>
+<p>Tirsdag</p>
+<p id="tirsdag"></p>
+<p id="tirsdag2"></p>
+<hr>
+<p>Onsdag</p>
+<p id="onsdag"></p>
+<hr>
+<p>Torsdag</p>
+<p id="torsdag"></p>
+<p id="torsdag2"></p>
+<hr>
+<p>Fredag</p>
+<p id="fredag"></p>
+
+
+    <script>
+        let mandag = document.getElementById("mandag");
+        let tirsdag = document.getElementById("tirsdag");
+        let onsdag = document.getElementById("onsdag");
+        let torsdag = document.getElementById("torsdag");
+        let fredag = document.getElementById("fredag");
+        let fag = document.getElementById("fag");
+        let tirsdag2 = document.getElementById("tirsdag2");
+        let torsdag2 = document.getElementById("torsdag2");
+
+
+
+
+        fag.onchange = function () {
+            let valgtFag = fag.selectedIndex;                       //Finner ut hvilket fag som er valgt
+            console.log(valgtFag);
+
+
+        switch(valgtFag) {
+            case 1:                                                     //Setter hva som skal være i timeplanen for de forskjellige valgene
+                mandag.innerHTML = `<ul>IT: 8:30-11:00</ul>
+                            <ul>Lunsj: 11:00-11:45</ul>
+                            <ul>IT: 11:45-13:30</ul>
+                    `;
+
+                break;
+            case 2:
+                mandag.innerHTML = `<ul>Matte (S): 8:30-11:00</ul>
+                            <ul>Lunsj: 11:00-11:45</ul>
+                            <ul>Matte (S): 11:45-13:30</ul>
+                    `;
+                break;
+            case 3:
+                tirsdag.innerHTML =
+                        `<ul>Matte (P): 8:30-11:00</ul>
+                            <ul>Lunsj: 11:00-11:20</ul>
+                            <ul>Matte (P): 11:20-12:15</ul>
+                    `;
+                break;
+            case 4:
+                tirsdag.innerHTML =
+                        `<ul>Historie m/ Lise: 8:30-11:00</ul>
+                            <ul>Lunsj: 11:00-11:20</ul>
+                            <ul>Historie m/ Lise: 11:20-13:00</ul>
+                    `;
+                break;
+            case 5:
+                onsdag.innerHTML =
+                        `<ul>Historie m/ Per: 8:30-11:00</ul>
+                            <ul>Lunsj: 11:00-11:30</ul>
+                            <ul>Historie m/ Per: 11:20-13:10</ul>
+                    `;
+                break;
+
+            case 6:
+                onsdag.innerHTML =
+                        `<ul>Norsk: 8:30-11:00</ul>
+                            <ul>Lunsj: 11:00-11:20</ul>
+                            <ul>Norsk: 11:20-13:50</ul>
+                    `;
+                break;
+
+            case 7:
+                torsdag.innerHTML =
+                        `<ul>Biologi: 8:30-11:00</ul>
+                            <ul>Lunsj: 11:00-11:20</ul>
+                            <ul>Biologi: 11:20-13:15</ul>
+                    `;
+                break;
+
+
+            case 8:
+                torsdag.innerHTML =
+                        `<ul>Religion m/ Peter: 8:30-11:00</ul>
+                            <ul>Lunsj: 11:00-11:20</ul>
+                            <ul>Religion m/ Peter: 11:20-13:15</ul>
+                    `;
+                break;
+            case 9:
+                fredag.innerHTML =
+                        `<ul>Religion m/ Bernt: 8:30-11:00</ul>
+                            <ul>Lunsj: 11:00-11:20</ul>
+                            <ul>Religion m/ Bernt: 11:20-13:15</ul>
+                    `;
+                break;
+            case 10:
+                fredag.innerHTML =
+                        `<ul>Psykologi: 8:30-11:00</ul>
+                            <ul>Lunsj: 11:00-11:25</ul>
+                            <ul>Psykologi: 11:20-13:10</ul>
+                    `;
+                break;
+            case 11:
+                tirsdag2.innerHTML =                                                //Siden gym er det eneste faget som ikke blir erstattet hvis et annet blir valgt er det eneste som får fjern knapp
+                        `<ul>Gym: 13:15-14:30</ul>
+                        <button onclick="fjern()">Fjern</button>
+
+                    `;
+                break;
+            case 12:
+                torsdag2.innerHTML =
+                        `<ul>Gym: 13:30-14:45</ul>
+                        <button onclick="fjerne()">Fjern</button>
+
+                    `;
+                break;
+
+        }
+
+        };
+
+
+        function fjern() {                              //Funksjonene som fjerner gym
+            tirsdag2.innerHTML = "";
+        }
+        function fjerne() {
+            torsdag2.innerHTML = "";
+        }
+
+
+
+
+    </script>
+
+</body>
+</html>
