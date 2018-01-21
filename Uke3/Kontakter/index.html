@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Mine kontakter</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.4.3/css/foundation-float.css">
+</head>
+<body>
+
+    <form id="frmKontakter">
+            <input id="inpFornavn" type="text" placeholder="Fornavn" required autocomplete="off">
+            <input id="inpEtternavn" type="text" placeholder="Etternavn" required autocomplete="off">
+            <input id="inpTelefon" type="tel" placeholder="Telefon" required autocomplete="off">
+            <button class="button" type="submit">Registrer kontakt</button>
+
+    </form>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Navn</th>
+                <th>Telefon</th>
+                <th>Slett</th>
+            </tr>
+        </thead>
+        <tbody id="tbKontakter"></tbody>
+    </table>
+
+    <script src="js/kontakt.js"></script>
+    <script src="js/main.js"></script>
+
+</body>
+</html>
