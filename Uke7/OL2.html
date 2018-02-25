@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>OL-oppgaver, Oppgave 2</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.4.3/css/foundation-float.css">
+    <style>
+        body{
+            width: 800px;
+            margin: auto;
+            margin-top: 50px;
+        }
+    </style>
+</head>
+<body>
+
+
+    <p>Country</p>
+    <select id="c">
+        <option value="1">United Stated</option>
+        <option value="2">Germany</option>
+        <option value="3">Canada</option>
+        <option value="4">Norway</option>
+        <option value="5">Austria</option>
+        <option value="6">Russia</option>
+    </select>
+
+    <p>Medal</p>
+    <select id="m">
+        <option value="g">Gold</option>
+        <option value="s">Silver</option>
+        <option value="b">Bronze</option>
+    </select>
+
+    <button class="button" id="btn">Add</button>
+
+    <table>
+        <thead>
+            <th>Country</th>
+            <th>Gold</th>
+            <th>Silver</th>
+            <th>Bronze</th>
+            <th>Total</th>
+        </thead>
+        <tbody>
+        <tr id="usa">
+
+        </tr>
+        <tr id="ger">
+
+        </tr>
+        <tr id="can">
+
+        </tr>
+        <tr id="nor">
+
+        </tr>
+        <tr id="aus">
+
+        </tr>
+        <tr id="rus">
+
+        </tr>
+        </tbody>
+    </table>
+
+
+    <script>
+        let m = document.getElementById("m");
+        let c = document.getElementById("c");
+        let usa = document.getElementById("usa");
+        let ger = document.getElementById("ger");
+        let nor = document.getElementById("nor");
+        let can = document.getElementById("can");
+        let aus = document.getElementById("aus");
+        let rus = document.getElementById("rus");
+        let btn = document.getElementById("btn");
+
+
+
+        let us = {gold: 9,
+            silver: 15,
+            bronze: 13,
+            total: 37
+            };
+        let g = {gold: 10,
+                silver: 13,
+                bronze: 7,
+                total: 30
+            };
+        let ca = {gold: 14,
+                silver: 7,
+                bronze: 5,
+                total: 26
+            };
+        let n = {gold: 9,
+                silver: 8,
+                bronze: 6,
+                total: 23
+            };
+        let a = {gold: 4,
+                silver: 6,
+                bronze: 6,
+                total: 16
+            };
+        let r = {gold: 3,
+                silver: 5,
+                bronze: 7,
+                total: 15
+            };
+
+            function fyll() {
+                usa.innerHTML =`
+                        <td>United States</td>
+                        <td>${us.gold}</td>
+                        <td>${us.silver}</td>
+                        <td>${us.bronze}</td>
+                        <td>${us.total}</td>
+                `;
+                ger.innerHTML =`
+                        <td>Germany</td>
+                        <td>${g.gold}</td>
+                        <td>${g.silver}</td>
+                        <td>${g.bronze}</td>
+                        <td>${g.total}</td>
+                `;
+                can.innerHTML =`
+                        <td>Canada</td>
+                        <td>${ca.gold}</td>
+                        <td>${ca.silver}</td>
+                        <td>${ca.bronze}</td>
+                        <td>${ca.total}</td>
+                `;
+                nor.innerHTML =`
+                        <td>Norway</td>
+                        <td>${n.gold}</td>
+                        <td>${n.silver}</td>
+                        <td>${n.bronze}</td>
+                        <td>${n.total}</td>
+                `;
+                aus.innerHTML =`
+                        <td>Austria</td>
+                        <td>${a.gold}</td>
+                        <td>${a.silver}</td>
+                        <td>${a.bronze}</td>
+                        <td>${a.total}</td>
+                `;
+                rus.innerHTML =`
+                        <td>Russia</td>
+                        <td>${r.gold}</td>
+                        <td>${r.silver}</td>
+                        <td>${r.bronze}</td>
+                        <td>${r.total}</td>
+                `;
+
+            }
+
+        btn.onclick = function() {
+
+            if(m.value == "g") {
+                if (c.value == "1") {
+                    us.gold++;
+                    us.total++;
+                }
+                else if (c.value == "2") {
+                    g.gold++;
+                    g.total++;
+
+                }
+                else if (c.value == "3") {
+                    ca.gold++;
+                    ca.total++;
+
+                }
+                else if (c.value == "4") {
+                    n.gold++;
+                    n.total++;
+
+                }
+                else if (c.value == "5") {
+                    a.gold++;
+                    a.total++;
+
+                }
+                else if (c.value == "6") {
+                    r.gold++;
+                    r.total++;
+
+                }}
+            else if (m.value == "s") {
+                if (c.value == "1") {
+                    us.silver++;
+                    us.total++;
+                }
+                else if (c.value == "2") {
+                    g.silver++;
+                    g.total++;
+
+                }
+                else if (c.value == "3") {
+                    ca.silver++;
+                    ca.total++;
+
+                }
+                else if (c.value == "4") {
+                    n.silver++;
+                    n.total++;
+
+                }
+                else if (c.value == "5") {
+                    a.silver++;
+                    a.total++;
+
+                }
+                else if (c.value == "6") {
+                    r.silver++;
+                    r.total++;
+
+                } }
+            else if (m.value == "b") {
+                        if (c.value == "1") {
+                            us.bronze++;
+                            us.total++;
+                        }
+                        else if (c.value == "2") {
+                            g.bronze++;
+                            g.total++;
+
+                        }
+                        else if (c.value == "3") {
+                            ca.bronze++;
+                            ca.total++;
+
+                        }
+                        else if (c.value == "4") {
+                            n.bronze++;
+                            n.total++;
+
+                        }
+                        else if (c.value == "5") {
+                            a.bronze++;
+                            a.total++;
+
+                        }
+                        else if (c.value == "6") {
+                            r.bronze++;
+                            r.total++;
+
+                        }
+
+                    }
+            fyll();
+            };
+
+            fyll();
+
+
+
+
+    </script>
+</body>
+</html>

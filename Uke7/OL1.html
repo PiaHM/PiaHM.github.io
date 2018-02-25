@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>OL oppgaver, Oppgave 1</title>
+</head>
+<body>
+
+    <button id="btn">Women's downhill</button>
+    <button id="btn1">Women's super-g</button>
+
+
+
+
+        <script>
+            const btn = document.getElementById("btn");
+            const btn1 = document.getElementById("btn1");
+
+
+            const ac = new AudioContext();
+        const gainNode = ac.createGain();
+        const osc = ac.createOscillator();
+
+        const l = 560;
+        const m = 1460;
+        const n = 1600; // egentlig 1490
+
+
+        osc.frequency.value = 880;
+
+        gainNode.connect(ac.destination);
+        osc.connect(gainNode);
+
+        gainNode.gain.value = 0;
+        osc.start(0);
+
+        function stopp() {
+            gainNode.gain.value = 0;
+
+        }
+
+         function start() {
+
+            gainNode.gain.value = 1;
+            setTimeout(stopp, 100);
+
+        }
+
+        function spill() {           //Women's downhill
+            start();
+            setTimeout(start, l);
+            setTimeout(start, m);
+            setTimeout(start, n);
+        }
+
+        function spela() {         //Women's super-g
+             start();
+             setTimeout(start, 490);
+             setTimeout(start, 740);
+             setTimeout(start, 850);
+             setTimeout(start, 1000);
+             setTimeout(start, 1110);
+             setTimeout(start, 1290);
+             setTimeout(start, 1320);
+             setTimeout(start, 1360);
+
+
+        }
+
+
+
+
+
+
+
+         btn.onclick = spill;
+            btn1.onclick = spela;
+
+
+
+
+
+
+
+
+
+
+
+    </script>
+
+
+</body>
+</html>

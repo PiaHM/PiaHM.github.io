@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>OL-oppgaver, Oppgave 5</title>
+    <style>
+        #boks {
+            border: solid crimson;
+            width: 500px;
+            height: 500px;
+            margin: auto;
+            margin-top: 100px;
+            overflow: hidden;
+        }
+        #b{
+            height: 50px;
+            width: 50px;
+            border-radius: 50%;
+            border: solid 3px blue;
+            position: relative;
+            top: 190px;
+            left: 160px;
+        }
+        #s{
+            height: 50px;
+            width: 50px;
+            border-radius: 50%;
+            border: solid 3px black;
+            position: relative;
+            left: 220px;
+            top: 135px;
+        }
+        #r{
+            height: 50px;
+            width: 50px;
+            border-radius: 50%;
+            border: solid 3px red;
+            position: relative;
+            left: 280px;
+            top: 80px;
+        }
+        #g{
+            height: 50px;
+            width: 50px;
+            border-radius: 50%;
+            border: solid 3px yellow;
+            position: relative;
+            top: 55px;
+            left: 190px;
+        }
+        #gr{
+            height: 50px;
+            width: 50px;
+            border-radius: 50%;
+            border: solid 3px green;
+            position: relative;
+            left: 250px;
+
+
+        }
+
+    </style>
+</head>
+<body>
+
+    <div id="boks">
+
+    <div id="b"></div>
+    <div id="s"></div>
+    <div id="r"></div>
+    <div id="g"></div>
+    <div id="gr"></div>
+    </div>
+
+    <script>
+     let b = document.getElementById("b");
+
+
+        let kfb = [
+            {left: "180px", top: "10px"},
+            {left: "20px", top: "100px"},
+            {left: "160px", top: "190px"}
+        ];
+
+       let kfs = [
+           {left: "-50px", top: "-10px"},
+           {left: "80px", top: "150px"},
+           {left: "220px", top: "135px"}
+       ];
+
+        let kfr = [
+            {left: "-30px", top: "-150px"},
+            {left: "360px", top: "200px"},
+            {left: "280px", top: "80px"}
+        ];
+
+     let kfg = [
+         {left: "5000px", top: "300px"},
+         {left: "360px", top: "100px"},
+         {left: "190px", top: "55px"}
+     ];
+
+     let kfgr = [
+         {left: "-300px", top: "150px"},
+         {left: "360px", top: "20px"},
+         {left: "250px", top: "0px"}
+     ];
+
+
+        let settings = {duration: 3000};
+
+        let bani = b.animate(kfb, settings);
+        let sani = s.animate(kfs, settings);
+        let rani = r.animate(kfr, settings);
+        let gani = g.animate(kfg, settings);
+        let grani = gr.animate(kfgr, settings);
+
+
+        bani.play();
+        sani.play();
+        rani.play();
+        gani.play();
+        grani.play();
+
+    </script>
+
+
+</body>
+</html>
