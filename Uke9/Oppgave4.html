@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Øvingsoppgaver, 4</title>
+    <style>
+        #canvas {
+            background-color: seashell;
+        }
+    </style>
+</head>
+<body>
+
+<form id="frm">
+    <canvas id="canvas" width="500" height="500"></canvas>
+    <input id="inp1" placeholder="Gi meg et tall" type="number">
+    <input id="inp2" placeholder="Gi meg mer tall" type="number">
+    <button id="btn" type="submit">Trykk på meg</button>
+</form>
+
+<script>
+    const frm = document.getElementById("frm");
+    const inp1 = document.getElementById("inp1");
+    const inp2 = document.getElementById("inp2");
+    const btn = document.getElementById("btn");
+
+    let canvas = document.getElementById("canvas");
+    let ctx = canvas.getContext("2d");
+
+
+
+
+    function tegn(evt) {
+    evt.preventDefault();
+
+        let a = Number(inp1.value);
+        let b = Number(inp2.value);
+
+        ctx.strokeStyle = "blue";
+        ctx.lineWidth = 10;
+        ctx.moveTo(250,a);
+        ctx.lineTo(b, 250);
+        ctx.stroke();
+    }
+
+    btn.onclick = tegn;
+
+
+
+</script>
+
+
+</body>
+</html>

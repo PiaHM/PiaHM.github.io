@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Øvingsoppgaver, 3</title>
+    <style>
+        #tekst {
+            font-size: 17px;
+        }
+    </style>
+</head>
+<body>
+
+    <input id="inp" placeholder="Endre størrelsen på den fine teksten" type="number">
+
+    <p id="tekst">Her er masse fin tekst</p>
+
+    <script>
+        const inp = document.getElementById("inp");
+        const tekst = document.getElementById("tekst");
+
+
+
+        function endreS() {
+            tekst.style.fontSize = Number(inp.value)+"px";
+        }
+
+        inp.onchange = endreS;
+
+    </script>
+</body>
+</html>

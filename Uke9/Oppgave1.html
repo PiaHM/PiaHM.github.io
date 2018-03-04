@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Øvingsoppgaver, 1</title>
+    <style>
+        #alt {
+            display: flex;
+            flex-direction: column;
+        }
+        #btn1 {
+            background-color: red;
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+        }
+        #btn2{
+            background-color: blue;
+            width: 100px;
+            height: 100px;
+        }
+
+
+    </style>
+</head>
+<body>
+
+    <div id="alt">
+    <button id="btn1">Klikk</button>
+    <button id="btn2">Klikkk</button>
+    </div>
+
+<script>
+    const alt = document.getElementById("alt");
+    const btn1 = document.getElementById("btn1");
+    const btn2 = document.getElementById("btn2");
+
+
+    function bytt() {
+
+       if (alt.style.flexDirection == "column") {
+           alt.style.flexDirection = "column-reverse";
+       } else {
+           alt.style.flexDirection = "column";
+       }
+
+    }
+
+    btn1.onclick = bytt;
+    btn2.onclick = bytt;
+
+
+</script>
+
+</body>
+</html>

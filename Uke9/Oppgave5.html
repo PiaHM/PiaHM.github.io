@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Øvingsoppgaver, 5</title>
+</head>
+<body>
+
+    <input id="inp" placeholder="Sjekk poeng" type="text">
+
+    <p id="poengbeskjed">Hvor mange poeng får du?</p>
+
+
+    <script>
+        const inp = document.getElementById("inp");
+        const poengbeskjed = document.getElementById("poengbeskjed");
+
+
+
+        let poeng = 0;
+
+
+        function regnUt() {
+            poeng = 0;
+            let ord = inp.value;
+            let ordet = ord.toUpperCase();
+            let bokstaver = ordet.split("");
+
+
+            for(let bokstav of bokstaver) {
+                switch (bokstav) {
+                    case "A":
+                    case "E":
+                    case "I":
+                    case "O":
+                    case "U":
+                    case "L":
+                    case "N":
+                    case "R":
+                    case "S":
+                    case "T":
+                        poeng += 1;
+                        break;
+                    case "D":
+                    case "G":
+                        poeng += 2;
+                        break;
+                    case "B":
+                    case "C":
+                    case "M":
+                    case "P":
+                        poeng += 3;
+                        break;
+                    case "F":
+                    case "H":
+                    case "V":
+                    case "W":
+                    case "Y":
+                        poeng += 4;
+                        break;
+                    case "K":
+                        poeng += 5;
+                        break;
+                    case "J":
+                    case "X":
+                        poeng += 8;
+                        break;
+                    case "Q":
+                    case "Z":
+                        poeng += 10;
+                    default:
+                        poeng += 20;
+
+
+                }
+
+
+            }
+            poengbeskjed.innerHTML = "Ordet gir deg: " + poeng + " poeng";
+        }
+
+
+
+
+
+        inp.oninput = regnUt;
+
+    </script>
+
+</body>
+</html>

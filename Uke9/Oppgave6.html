@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Øvingsoppgaver, 6</title>
+    <style>
+        #ball {
+            position: relative;
+            top: 500px;
+            height: 100px;
+            width: 100px;
+            border-radius: 50%;
+            background-color: indianred;
+            left: 450px;
+
+        }
+       #gulv {
+           position: relative;
+           top: 500px;
+           background-color: black;
+           height: 10px;
+       }
+        #klippe {
+            position: relative;
+            top: 150px;
+            background-color: black;
+            height: 10px;
+            width: 300px;
+            border-top-right-radius: 20%;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div id="klippe"></div>
+    <div id="ball"></div>
+    <div id="gulv"></div>
+
+
+    <script>
+        const ball = document.getElementById("ball");
+
+      let keyframes = [
+            {top: "40px", left: "0px"},
+            {top: "40px", left: "100px"},
+            {top: "40px", left: "200px"},
+            {top: "40px", left: "290px"},
+            {top: "500px", left: "325px" },
+            {top: "120px", left: "350px"},
+            {top: "500px", left: "375px"},
+            {top: "220px", left: "400px"},
+            {top: "500px", left: "420px"},
+            {top: "420px", left: "440px"},
+            {top: "500px", left: "450px"}
+        ];
+
+        let settings = {duration: 5000};
+
+       let fall = ball.animate(keyframes, settings);
+
+       fall.play();
+
+
+    </script>
+
+</body>
+</html>

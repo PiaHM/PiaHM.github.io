@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Øvingsoppgaver, 2</title>
+    <style>
+        #ord {
+            color: orange;
+            font-size: xx-large;
+        }
+    </style>
+</head>
+<body>
+
+    <input id="inp" placeholder="dro liepS">
+    <div id="ord"></div>
+
+<script>
+    const inp = document.getElementById("inp");
+    const ord = document.getElementById("ord");
+
+
+
+    function skriv() {
+        let setning = inp.value;
+        let bokstaver = setning.split(""); //Blir array
+        bokstaver.reverse();
+
+        let snudd = bokstaver.join("");
+
+
+        ord.innerHTML = `<p>${snudd}</p>`;
+
+    }
+
+    inp.oninput = skriv;
+
+</script>
+
+</body>
+</html>
